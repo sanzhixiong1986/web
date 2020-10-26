@@ -137,4 +137,16 @@
        driver-class-name: com.mysql.cj.jdbc.Driver
    ```
 
-以上都是一些关键类，和一些配置
+以上都是一些关键类，和一些配置。
+
+增加nginx配置
+
+首先安装brew install nginx mac上安装，等安装完成使用sudo nginx 进行打开
+
+```yaml
+/usr/local/etc/nginx/nginx.conf （配置文件路径）
+/usr/local/var/www （服务器默认路径）
+/usr/local/Cellar/nginx/1.8.0 （安装路径）
+```
+
+我们要把html文件放入到服务器默认路径里面
