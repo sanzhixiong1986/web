@@ -23,8 +23,9 @@ public class LoginController {
      */
     @RequestMapping("/user/login")
     @ResponseBody
-    public String login(){
-        return "login";
+    public String login(@RequestParam("email") String email,@RequestParam("password") String password){
+        //
+        return email;
     }
 
     @RequestMapping("/user/getMsg")
