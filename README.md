@@ -51,7 +51,7 @@
 
 2. 其中<select id="findById" resultType="com.myself.mybatis.entity.TMsg"> id等于mapper类方法，resultType后面对应返回值。
 
-3. 还有一个包service有一个重要的类。
+   
 
    ```java
    package com.myself.mybatis.service.impl;
@@ -76,7 +76,7 @@
    }
    ```
 
-4. 最后就是在控制器里面进行操作。
+   
 
    ```java
    package com.myself.mybatis.controller;
@@ -117,7 +117,7 @@
    }
    ```
 
-5. 还有一个重点就是配置
+   
 
    ```yml
    mybatis:
@@ -125,7 +125,7 @@
      type-aliases-package: com.myself.mybatis.entity
    ```
 
-6. mysql的配置,因为我使用的是com.mysql.cj.jdbc.Driver进行jdbc数据操作
+   
 
    ```yaml
    #数据库相关配置
@@ -136,3 +136,5 @@
        password: sanzhixiong
        driver-class-name: com.mysql.cj.jdbc.Driver
    ```
+
+以上都是一些关键类，和一些配置
