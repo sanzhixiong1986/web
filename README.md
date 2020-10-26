@@ -188,3 +188,6 @@ public class GlobalCorsConfig {
 }
 ```
 
+springboot接受前端发送信息的集中方式
+
+https://www.hangge.com/blog/cache/detail_2485.html
