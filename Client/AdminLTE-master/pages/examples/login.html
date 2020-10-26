@@ -23,7 +23,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg"></p>
-      <form action="http://127.0.0.1:9000/user/login" method="post">
+      <!-- <form action="http://127.0.0.1:9000/user/login" method="post"> -->
         <div class="input-group mb-3">
           <input type="email" class="form-control" id="email" name="email" placeholder="Email">
           <div class="input-group-append">
@@ -51,11 +51,11 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">登陆</button>
+            <button class="btn btn-primary btn-block" id="send">登陆</button>
           </div>
           <!-- /.col -->
         </div>
-      </form>
+
       <!-- /.social-auth-links -->
       <p class="mb-1">
         <a href="forgot-password.html">我忘记了密码</a>
@@ -77,8 +77,29 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <script type="text/javascript">
   $(function(){
-    //加载进来判断
+    $('#send').click(function(){
+      //获得数据
+      var email = $('#email').val();
+      var password = $('#password').val();
+      //使用ajax进行操作
+      if(email == "" || password == ""){
+        alert("用户或者密码不能为空");
+        return;
+      }
 
+      $.ajax({
+         type: "POST",
+         url: "http://127.0.0.1:9000/user/login",
+         beforeSend:function(xhr){
+            xhr.withCredentials = true;
+         },
+         data: "email="+email+"&password="+password,
+         success: function(msg){
+           alert( "Data Saved: " + msg );
+         }
+      });
+
+    })
   })
 </script>
 </body>

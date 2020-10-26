@@ -23,9 +23,10 @@ public class LoginController {
      */
     @RequestMapping("/user/login")
     @ResponseBody
+    @CrossOrigin
     public String login(@RequestParam("email") String email,@RequestParam("password") String password){
         //
-        return email;
+        return "{name:1,state:2}";
     }
 
     @RequestMapping("/user/getMsg")
