@@ -19,4 +19,9 @@ public class TMsgServiceImpl implements TMsgService {
     public TMsg findById(Integer id) {
         return tMsgMapper.findById(id);
     }
+
+    @Override
+    public TMsg findByName(String name) {
+        return tMsgMapper.findByName(name);
+    }
 }

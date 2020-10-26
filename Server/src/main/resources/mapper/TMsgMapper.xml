@@ -4,4 +4,8 @@
     <select id="findById" resultType="com.myself.mybatis.entity.TMsg">
         SELECT id,userName,passWord from game_login WHERE id = #{id}
     </select>
+
+    <select id="findByName" resultType="com.myself.mybatis.entity.TMsg">
+        SELECT id,userName,passWord from game_login WHERE userName = #{name}
+    </select>
 </mapper>
