@@ -153,7 +153,7 @@
 
 服务器增加跨域配置
 
-```
+```java
 package com.hehe.yyweb.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -191,3 +191,37 @@ public class GlobalCorsConfig {
 springboot接受前端发送信息的集中方式
 
 https://www.hangge.com/blog/cache/detail_2485.html
+
+前端使用jquery进行数据的传输带入如下
+
+```javascript
+$('#send').click(function(){
+      //获得数据
+      var email = $('#email').val();
+      var password = $('#password').val();
+      //使用ajax进行操作
+      if(email == "" || password == ""){
+        alert("用户或者密码不能为空");
+        return;
+      }
+
+      $.ajax({
+         type: "POST",
+         url: "http://127.0.0.1:9000/user/login",
+         beforeSend:function(xhr){
+            xhr.withCredentials = true;
+         },
+         data: "email="+email+"&password="+password,
+         success: function(msg){
+           alert( "Data Saved: " + JSON.parse(msg).code );
+           if(JSON.parse(msg).code){
+            window.location.replace("../../index.html");
+           }
+         },
+         error:function(){
+          alert('出现网络或者未知错误')
+         }
+      });
+    })
+```
+

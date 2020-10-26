@@ -95,7 +95,13 @@
          },
          data: "email="+email+"&password="+password,
          success: function(msg){
-           alert( "Data Saved: " + msg );
+           alert( "Data Saved: " + JSON.parse(msg).code );
+           if(JSON.parse(msg).code){
+            window.location.replace("../../index.html");
+           }
+         },
+         error:function(){
+          alert('出现网络或者未知错误')
          }
       });
 
