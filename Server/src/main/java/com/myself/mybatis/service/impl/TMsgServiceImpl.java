@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by MySelf on 2019/4/9.
+ * ligit
  */
 @Service
 public class TMsgServiceImpl implements TMsgService {
