@@ -49,7 +49,7 @@
    }
    ```
 
-2. 其中<select id="findById" resultType="com.myself.mybatis.entity.TMsg"> id等于mapper类方法，resultType后面对应返回值。
+2. 其中select id="findById" resultType="com.myself.mybatis.entity.TMsg, id等于mapper类方法，resultType后面对应返回值。
 
    
 
